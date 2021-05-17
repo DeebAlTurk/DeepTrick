@@ -1,3 +1,4 @@
+# imports
 import datetime
 import json
 
@@ -35,6 +36,8 @@ def is_css_selector_available(soup: BeautifulSoup, selector: str):
 
 
 def indexer(elms: list, negative: bool = False):
+    # this function takes a list and print the index of each item in that list
+    # you can also print the negative index of the list
     if negative:
         x: dict = {}
         for i in range(-1, len(elms) * -1, -1):
