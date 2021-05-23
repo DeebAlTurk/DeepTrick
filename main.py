@@ -276,7 +276,8 @@ while scraping_type == 0:
                     get_attr_list_of_tags(current_page, options["name"], options["attr"], options["start"],
                                           options["end"]))
             elif options["get_what"] == "text":
-                get_text_list_of_tags(current_page, options["name"], options["start"], options["end"])
+                target[options["label"]] = get_text_list_of_tags(current_page, options["name"], options["start"],
+                                                                 options["end"])
         elif options["type"] == "class":
             if options["get_what"] == "tag":
                 target[options["label"]] = str(current_page.find_all(options["name"])[options["start"]:options["end"]])
@@ -285,16 +286,18 @@ while scraping_type == 0:
                     get_attr_list_of_class(current_page, options["name"], options["attr"], options["start"],
                                            options["end"]))
             elif options["get_what"] == "text":
-                get_text_list_of_class(current_page, options["name"], options["start"], options["end"])
+                target[options["label"]] = get_text_list_of_class(current_page, options["name"], options["start"],
+                                                                  options["end"])
         elif options["type"] == "selector":
             if options["get_what"] == "tag":
-                target[options["label"]] = str(current_page.find_all(options["name"])[options["start"]:options["end"]])
+                target[options["label"]] = str(current_page.select(options["name"])[options["start"]:options["end"]])
             elif options["get_what"] == "attr":
                 target[options["label"]] = str(
                     get_attr_list_of_selector(current_page, options["name"], options["attr"], options["start"],
                                               options["end"]))
             elif options["get_what"] == "text":
-                get_text_list_of_selector(current_page, options["name"], options["start"], options["end"])
+                target[options["label"]] = get_text_list_of_selector(current_page, options["name"], options["start"],
+                                                                     options["end"])
 
     options.clear()
     print("[0]=> continue")
