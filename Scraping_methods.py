@@ -235,3 +235,57 @@ def get_attr_list_of_selector(soup: BeautifulSoup, name: str, attr: str, start: 
     if len(result) == 0:
         return None
     return result
+
+
+def get_text_list_of_tags(soup: BeautifulSoup, name: str, start: int, end: int):
+    """
+    this function get the list of inner text  of a bs4 result
+    :param soup: Beautiful soup object that contains the page content
+    :param name: the name of the tag
+    :param start: the start index
+    :param end: the last index
+    :return: An list that contain the inner text value of the tag, if not found None
+    """
+    result: list = []
+    lst = soup.find_all(name)[start:end]
+    for x in lst:
+        result.append(x.text.strip())
+    if len(result) == 0:
+        return None
+    return result
+
+
+def get_text_list_of_class(soup: BeautifulSoup, name: str, start: int, end: int):
+    """
+    this function get the list of inner text  of a bs4 result
+    :param soup: Beautiful soup object that contains the page content
+    :param name: the name of the class
+    :param start: the start index
+    :param end: the last index
+    :return: An list that contain the inner text value of the class, if not found None
+    """
+    result: list = []
+    lst = soup.find_all(class_=name)[start:end]
+    for x in lst:
+        result.append(x.text.strip())
+    if len(result) == 0:
+        return None
+    return result
+
+
+def get_text_list_of_selector(soup: BeautifulSoup, name: str, start: int, end: int):
+    """
+    this function get the list of inner text  of a bs4 result
+    :param soup: Beautiful soup object that contains the page content
+    :param name: the name of the selector
+    :param start: the start index
+    :param end: the last index
+    :return:An list that contain the inner text value of the selector,if not found None
+    """
+    result: list = []
+    lst = soup.select(name)[start:end]
+    for x in lst:
+        result.append(x.text.strip())
+    if len(result) == 0:
+        return None
+    return result
