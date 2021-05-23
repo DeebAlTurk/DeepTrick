@@ -176,53 +176,62 @@ def get_attr_of_selector(soup: BeautifulSoup, selector: str, attr: str, offset: 
         return soup.select(selector)[offset].get(attr)
     return None
 
-# def get_data_of(soup: BeautifulSoup, name: str, type: str, all_tag=True, is_url=False, offset: int = 0, attr: str = "",
-#                 base_url: str = ""):
-#     if all_tag and not is_url:
-#         if type == "tag":
-#             if len(soup.find_all(name)) < offset or len(soup.find_all(name)) * -1 > offset:
-#                 offset = 0
-#             if soup.find_all(name)[offset] is not None:
-#                 return soup.find_all(name)[offset]
-#             else:
-#                 return None
-#         elif type == "class":
-#             if len(soup.find_all(class_=name)) < offset or len(soup.find_all(class_=name)) * -1 > offset:
-#                 offset = 0
-#             if soup.find_all(class_=name)[offset] is not None:
-#                 return soup.find_all(class_=name)[offset]
-#             else:
-#                 return None
-#         elif type == "selector":
-#             if len(soup.select(name)) < offset or len(soup.select(name)) * -1 > offset:
-#                 offset = 0
-#             if soup.select(name)[offset] is not None:
-#                 return soup.select(name)[offset]
-#             else:
-#                 return None
-#
-#     if not all_tag and attr != "":
-#         if type == "tag":
-#             if len(soup.find_all(name)) < offset or len(soup.find_all(name)) * -1 > offset:
-#                 offset = 0
-#             if soup.find_all(name)[offset] is not None and soup.find_all(name)[offset].has_attr(attr):
-#                 if is_url and not url_methods.is_url_absolute(soup.find_all(name)[offset].get(attr)):
-#                     return url_methods.get_full_url(base_url, soup.find_all(name)[offset].get(attr))
-#             else:
-#                 return soup.find_all(name)[offset].get(attr)
-#         elif type == "class":
-#             if len(soup.find_all(class_=name)) < offset or len(soup.find_all(class_=name)) * -1 > offset:
-#                 offset = 0
-#             if soup.find_all(class_=name)[offset] is not None and soup.find_all(class_=name)[offset].has_attr(attr):
-#                 if is_url and not url_methods.is_url_absolute(soup.find_all(class_=name)[offset].get(attr)):
-#                     return url_methods.get_full_url(base_url, soup.find_all(class_=name)[offset].get(attr))
-#             else:
-#                 return soup.find_all(class_=name)[offset].get(attr)
-#         elif type == "selector":
-#             if len(soup.select(name)) < offset or len(soup.select(name)) * -1 > offset:
-#                 offset = 0
-#             if soup.select(name)[offset] is not None and soup.select(name)[offset].has_attr(attr):
-#                 if is_url and not url_methods.is_url_absolute(soup.select(name)[offset].get(attr)):
-#                     return url_methods.get_full_url(base_url, soup.select(name)[offset].get(attr))
-#             else:
-#                 return soup.select(name)[offset].get(attr)
+
+def get_attr_list_of_tags(soup: BeautifulSoup, name: str, attr: str, start: int, end: int):
+    """
+    this function get the list of attr value of a bs4 result
+    :param soup: Beautiful soup object that contains the page content
+    :param name: the name of the tag
+    :param attr: the targeted attr
+    :param start: the start index
+    :param end: the last index
+    :return: An list that contain the attr value of the tag, if the attr is not present then it will return None
+    """
+    result: list = []
+    lst = soup.find_all(name)[start:end]
+    for x in lst:
+        if x.has_attr(attr):
+            result.append(x.get(attr))
+    if len(result) == 0:
+        return None
+    return result
+
+
+def get_attr_list_of_class(soup: BeautifulSoup, name: str, attr: str, start: int, end: int):
+    """
+    this function get the list of attr value of a bs4 result
+    :param soup: Beautiful soup object that contains the page content
+    :param name: the name of the class
+    :param attr: the targeted attr
+    :param start: the start index
+    :param end: the last index
+    :return: An list that contain the attr value of the class, if the attr is not present then it will return None
+    """
+    result: list = []
+    lst = soup.find_all(class_=name)[start:end]
+    for x in lst:
+        if x.has_attr(attr):
+            result.append(x.get(attr))
+    if len(result) == 0:
+        return None
+    return result
+
+
+def get_attr_list_of_selector(soup: BeautifulSoup, name: str, attr: str, start: int, end: int):
+    """
+    this function get the list of attr value of a bs4 result
+    :param soup: Beautiful soup object that contains the page content
+    :param name: the name of the selector
+    :param attr: the targeted attr
+    :param start: the start index
+    :param end: the last index
+    :return: An list that contain the attr value of the selector, if the attr is not present then it will return None
+    """
+    result: list = []
+    lst = soup.select(name)[start:end]
+    for x in lst:
+        if x.has_attr(attr):
+            result.append(x.get(attr))
+    if len(result) == 0:
+        return None
+    return result
