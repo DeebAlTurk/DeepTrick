@@ -5,7 +5,7 @@ import json
 from bs4 import BeautifulSoup
 
 
-def convert_to_json(elms: dict, indent: int = 4):
+def convert_dict_to_json(elms: dict, indent: int = 4):
     """
     this function convert the dictionary into a json file
     the name of the json file will be the current date and time
