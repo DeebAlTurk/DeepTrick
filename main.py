@@ -646,6 +646,7 @@ while scraping_type == 1:
         old_links.append(next_link)
         current_page = BeautifulSoup(response.content, 'lxml')
     print(next_link)
-    count+=1
+    count += 1
 for x in target.keys():
     print(f"{x} => {target[x]}")
+convert_dict_to_json(target, 4)
