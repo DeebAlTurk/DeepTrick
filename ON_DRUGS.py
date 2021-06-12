@@ -42,10 +42,10 @@ for link in demo:
              'start': 0,
              'end': 0, 'get_what': 'text'}
     prise['end'] = len(soup.select(prise['name'])) + 1
-    options[0](desc)
-    options[1](size)
-    options[2](prise)
-    options[3](img)
+    options[0] = desc
+    options[1] = size
+    options[2] = prise
+    options[3] = img
 
 target = scraper(soup, options, target)
 for i in target.keys():
