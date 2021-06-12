@@ -24,6 +24,7 @@ def check_url_format(url: str):
     :return: true if the url is has a valid format else it will return false
     """
     regex = 'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
+    url = url.strip()
     x = re.fullmatch(regex, url)
     if x:
         res: bool = True
