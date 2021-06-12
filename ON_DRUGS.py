@@ -17,13 +17,12 @@ for big in giant.split("_DELMX_"):
 browser = webdriver.Firefox()
 target = {}
 demo: list = []
-options: list = []
+options: list = [0, 1, 2, 3]
 demo.append(links[1])
 demo.append(links[2])
 
 for link in demo:
-    browser.get(
-        link[1])
+    browser.get(link[1])
     sleep(10)
     soup = BeautifulSoup(browser.page_source, "lxml")
     desc = {'label': link[0] + " Desc", 'type': 'selector', 'name': '.css-12fzzt2', 'exists': True, 'isRange': 1,
