@@ -5,13 +5,17 @@ import json
 from bs4 import BeautifulSoup
 
 
-def convert_list_of_dicts_to_json(elms: list, indet: int = 4):
+def convert_list_of_dicts_to_json(elms: list, indet: int = 4, name=""):
     for item in list:
         for keys in dict(item).keys():
             item[keys] = str(item[keys])
-    filename: str = datetime.datetime.now().strftime('%Y-%m-%d %H-%M-%S')
-    with open(f"{filename}.json", 'a') as write_file:
-        json.dumps(elms, indent=indet)
+    if name == "":
+        filename: str = datetime.datetime.now().strftime('%Y-%m-%d %H-%M-%S')
+        with open(f"{filename}.json", 'a') as write_file:
+            json.dumps(elms, indent=indet)
+    else:
+        with open(f"{name}.json", 'a') as write_file:
+            json.dumps(elms, indent=indet)
 
 
 def convert_dict_to_json(elms: dict, indent: int = 4):
@@ -47,17 +51,8 @@ def is_css_selector_available(soup: BeautifulSoup, selector: str):
 def indexer(elms: list, negative: bool = False):
     # this function takes a list and print the index of each item in that list
     # you can also print the negative index of the list
-    if negative:
-        x: dict = {}
-        for i in range(-1, len(elms) * -1, -1):
-            # print(f"[{i}] {elms[i]}")
-            x[i] = elms[i]
-        for k in reversed(x.keys()):
-            print(f"[{k}] {x[k]}")
-        return
-    else:
-        for i in range(len(elms)):
-            print(f'[{i}] {elms[i]}')
+    for i in range(len(elms)):
+        print(f'[{i}] {elms[i]}')
 
 
 def is_range_correct(elms: list, start: int, end: int):
@@ -298,3 +293,164 @@ def get_text_list_of_selector(soup: BeautifulSoup, name: str, start: int, end: i
     if len(result) == 0:
         return None
     return result
+
+
+def scraper(current_page: BeautifulSoup, options_list: list, target: dict):
+    for options in options_list:
+        if options["isRange"] == 0:
+            if options["type"] == "tag":
+                if options["get_what"] == "attr":
+                    if target.__contains__(options["label"]):
+                        target[options["label"]] += "\n" + str(
+                            get_attr_of_tag(current_page, options["name"], options["attr"],
+                                            options["offset"]))
+                    else:
+                        if get_attr_of_tag(current_page, options["name"], options["attr"],
+                                           options["offset"]) is not None:
+                            target[options["label"]] = str(
+                                get_attr_of_tag(current_page, options["name"], options["attr"],
+                                                options["offset"]))
+                elif options["get_what"] == "text":
+                    if target.__contains__(options["label"]):
+                        target[options["label"]] += "\n" + str(
+                            current_page.find_all(options["name"])[options['offset']].text).strip()
+                    else:
+                        target[options["label"]] = str(
+                            current_page.find_all(options["name"])[options['offset']].text).strip()
+                else:
+                    if target.__contains__(options["label"]):
+                        target[options["label"]] += "\n" + str(
+                            current_page.find_all(options["name"])[options['offset']])
+                    else:
+                        target[options["label"]] = str(current_page.find_all(options["name"])[options['offset']])
+
+            elif options["type"] == "class":
+                if options["get_what"] == "attr":
+                    if target.__contains__(options["label"]):
+                        target[options["label"]] += "\n" + str(
+                            get_attr_of_class(current_page, options["name"], options["attr"],
+                                              options["offset"]))
+                    else:
+                        if get_attr_of_class(current_page, options["name"], options["attr"],
+                                             options["offset"]) is not None:
+                            target[options["label"]] = str(
+                                get_attr_of_class(current_page, options["name"], options["attr"],
+                                                  options["offset"]))
+                elif options["get_what"] == "text":
+                    if target.__contains__(options["label"]):
+                        target[options["label"]] += "\n" + str(
+                            current_page.find_all(class_=options["name"])[options["offset"]].text).strip()
+                    else:
+                        target[options["label"]] = str(
+                            current_page.find_all(class_=options["name"])[options["offset"]].text).strip()
+                else:
+                    if target.__contains__(options["label"]):
+                        target[options["label"]] = target[options["label"]] + "\n" + str(
+                            current_page.find_all(class_=options["name"])[options['offset']])
+                    else:
+                        target[options["label"]] = str(current_page.find_all(class_=options["name"])[options['offset']])
+
+            elif options["type"] == "selector":
+                if options["get_what"] == "attr":
+                    if target.__contains__(options["label"]):
+                        target[options["label"]] = target[options["label"]] + "\n" + str(
+                            get_attr_of_selector(current_page, options["name"], options["attr"], options["offset"]))
+                    else:
+                        if get_attr_of_selector(current_page, options["name"], options["attr"],
+                                                options["offset"]) is not None:
+                            target[options["label"]] = str(
+                                get_attr_of_selector(current_page, options["name"], options["attr"], options["offset"]))
+                elif options["get_what"] == "text":
+                    if target.__contains__(options["label"]):
+                        target[options["label"]] = target[options["label"]] + "\n" + str(
+                            current_page.select(options["name"])[options["offset"]].text).strip()
+                    else:
+                        target[options["label"]] = str(
+                            current_page.select(options["name"])[options["offset"]].text).strip()
+                else:
+                    if target.__contains__(options["label"]):
+                        target[options["label"]] = target[options["label"]] + "\n" + str(
+                            current_page.select(options["name"])[options["offset"]])
+                    else:
+                        target[options["label"]] = str(current_page.select(options["name"])[options["offset"]])
+
+        else:
+            if options["type"] == "tag":
+                if options["get_what"] == "tag":
+                    if target.__contains__(options["label"]):
+                        target[options["label"]] += "\n" + str(
+                            current_page.find_all(options["name"])[options["start"]:options["end"]])
+                    else:
+                        target[options["label"]] = str(
+                            current_page.find_all(options["name"])[options["start"]:options["end"]])
+                elif options["get_what"] == "attr":
+                    if target.__contains__(options["label"]):
+                        target[options["label"]] += "\n" + str(
+                            get_attr_list_of_tags(current_page, options["name"], options["attr"], options["start"],
+                                                  options["end"]))
+                    else:
+                        target[options["label"]] = str(
+                            get_attr_list_of_tags(current_page, options["name"], options["attr"], options["start"],
+                                                  options["end"]))
+                elif options["get_what"] == "text":
+                    if target.__contains__(options["label"]):
+                        target[options["label"]] += "\n" + str(
+                            get_text_list_of_tags(current_page, options["name"], options["start"],
+                                                  options["end"]))
+                    else:
+                        target[options["label"]] = str(
+                            get_text_list_of_tags(current_page, options["name"], options["start"],
+                                                  options["end"]))
+            elif options["type"] == "class":
+                if options["get_what"] == "tag":
+                    if target.__contains__(options["label"]):
+                        target[options["label"]] += "\n" + str(
+                            current_page.find_all(options["name"])[options["start"]:options["end"]])
+                    else:
+                        target[options["label"]] = str(
+                            current_page.find_all(options["name"])[options["start"]:options["end"]])
+                elif options["get_what"] == "attr":
+                    if target.__contains__(options["label"]):
+                        target[options["label"]] += "\n" + str(
+                            get_attr_list_of_class(current_page, options["name"], options["attr"], options["start"],
+                                                   options["end"]))
+                    else:
+                        target[options["label"]] = str(
+                            get_attr_list_of_class(current_page, options["name"], options["attr"], options["start"],
+                                                   options["end"]))
+                elif options["get_what"] == "text":
+                    if target.__contains__(options["label"]):
+                        target[options["label"]] += "\n" + str(
+                            get_text_list_of_class(current_page, options["name"], options["start"],
+                                                   options["end"]))
+                    else:
+                        target[options["label"]] = str(
+                            get_text_list_of_class(current_page, options["name"], options["start"],
+                                                   options["end"]))
+            elif options["type"] == "selector":
+                if options["get_what"] == "tag":
+                    if target.__contains__(options["label"]):
+                        target[options["label"]] += "\n" + str(
+                            current_page.select(options["name"])[options["start"]:options["end"]])
+                    else:
+                        target[options["label"]] = str(
+                            current_page.select(options["name"])[options["start"]:options["end"]])
+                elif options["get_what"] == "attr":
+                    if target.__contains__(options["label"]):
+                        target[options["label"]] += "\n" + str(
+                            get_attr_list_of_selector(current_page, options["name"], options["attr"], options["start"],
+                                                      options["end"]))
+                    else:
+                        target[options["label"]] = str(
+                            get_attr_list_of_selector(current_page, options["name"], options["attr"], options["start"],
+                                                      options["end"]))
+                elif options["get_what"] == "text":
+                    if target.__contains__(options["label"]):
+                        target[options["label"]] += "\n" + str(get_text_list_of_selector(current_page, options["name"],
+                                                                                         options["start"],
+                                                                                         options["end"]))
+                    else:
+                        target[options["label"]] = str(get_text_list_of_selector(current_page, options["name"],
+                                                                                 options["start"],
+                                                                                 options["end"]))
+    return target

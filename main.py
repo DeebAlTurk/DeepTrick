@@ -1,3 +1,7 @@
+from time import sleep
+
+from selenium import webdriver
+
 from Scraping_methods import *
 from Validtors.url_methods import *
 
@@ -6,12 +10,16 @@ if not check_url_exists(url):
     print("Invalid URL")
     exit("Exiting Deep Trick")
 
+browser = webdriver.Firefox()
+browser.get(url)
+browser.execute_script("window.scrollTo(0,document.body.scrollHeight)")
+sleep(10)
 # the user agent to mimic access websites that doesnt allow the default user agent of the BS
 user_agent = {'User-agent': 'Mozilla/5.0'}
 # the response of the get request the was sent
-response = requests.get(url, headers=user_agent)
+# response = requests.get(url, headers=user_agent)
 # the BS object that contain the HTML of the page
-current_page = BeautifulSoup(response.content, 'lxml')
+current_page = BeautifulSoup(browser.page_source, 'lxml')
 # print the page because some websites like Zomato changes the CSS classes with each request
 # the prettify method to make the html for readable
 print(current_page.prettify())
@@ -455,167 +463,12 @@ try:
 except ValueError:
     exit("Depth >= 0")
 count: int = 0
+
 while scraping_type == 1:
     if count == depth and depth != 0:
         break
     # TODO add append
-    for options in options_list:
-        if options["isRange"] == 0:
-            if options["type"] == "tag":
-                if options["get_what"] == "attr":
-                    if target.__contains__(options["label"]):
-                        target[options["label"]] += "\n" + str(
-                            get_attr_of_tag(current_page, options["name"], options["attr"],
-                                            options["offset"]))
-                    else:
-                        if get_attr_of_tag(current_page, options["name"], options["attr"],
-                                           options["offset"]) is not None:
-                            target[options["label"]] = str(
-                                get_attr_of_tag(current_page, options["name"], options["attr"],
-                                                options["offset"]))
-                elif options["get_what"] == "text":
-                    if target.__contains__(options["label"]):
-                        target[options["label"]] += "\n" + str(
-                            current_page.find_all(options["name"])[options['offset']].text).strip()
-                    else:
-                        target[options["label"]] = str(
-                            current_page.find_all(options["name"])[options['offset']].text).strip()
-                else:
-                    if target.__contains__(options["label"]):
-                        target[options["label"]] += "\n" + str(
-                            current_page.find_all(options["name"])[options['offset']])
-                    else:
-                        target[options["label"]] = str(current_page.find_all(options["name"])[options['offset']])
-
-            elif options["type"] == "class":
-                if options["get_what"] == "attr":
-                    if target.__contains__(options["label"]):
-                        target[options["label"]] += "\n" + str(
-                            get_attr_of_class(current_page, options["name"], options["attr"],
-                                              options["offset"]))
-                    else:
-                        if get_attr_of_class(current_page, options["name"], options["attr"],
-                                             options["offset"]) is not None:
-                            target[options["label"]] = str(
-                                get_attr_of_class(current_page, options["name"], options["attr"],
-                                                  options["offset"]))
-                elif options["get_what"] == "text":
-                    if target.__contains__(options["label"]):
-                        target[options["label"]] += "\n" + str(
-                            current_page.find_all(class_=options["name"])[options["offset"]].text).strip()
-                    else:
-                        target[options["label"]] = str(
-                            current_page.find_all(class_=options["name"])[options["offset"]].text).strip()
-                else:
-                    if target.__contains__(options["label"]):
-                        target[options["label"]] = target[options["label"]] + "\n" + str(
-                            current_page.find_all(class_=options["name"])[options['offset']])
-                    else:
-                        target[options["label"]] = str(current_page.find_all(class_=options["name"])[options['offset']])
-
-            elif options["type"] == "selector":
-                if options["get_what"] == "attr":
-                    if target.__contains__(options["label"]):
-                        target[options["label"]] = target[options["label"]] + "\n" + str(
-                            get_attr_of_selector(current_page, options["name"], options["attr"], options["offset"]))
-                    else:
-                        if get_attr_of_selector(current_page, options["name"], options["attr"],
-                                                options["offset"]) is not None:
-                            target[options["label"]] = str(
-                                get_attr_of_selector(current_page, options["name"], options["attr"], options["offset"]))
-                elif options["get_what"] == "text":
-                    if target.__contains__(options["label"]):
-                        target[options["label"]] = target[options["label"]] + "\n" + str(
-                            current_page.select(options["name"])[options["offset"]].text).strip()
-                    else:
-                        target[options["label"]] = str(
-                            current_page.select(options["name"])[options["offset"]].text).strip()
-                else:
-                    if target.__contains__(options["label"]):
-                        target[options["label"]] = target[options["label"]] + "\n" + str(
-                            current_page.select(options["name"])[options["offset"]])
-                    else:
-                        target[options["label"]] = str(current_page.select(options["name"])[options["offset"]])
-
-        else:
-            if options["type"] == "tag":
-                if options["get_what"] == "tag":
-                    if target.__contains__(options["label"]):
-                        target[options["label"]] += "\n" + str(
-                            current_page.find_all(options["name"])[options["start"]:options["end"]])
-                    else:
-                        target[options["label"]] = str(
-                            current_page.find_all(options["name"])[options["start"]:options["end"]])
-                elif options["get_what"] == "attr":
-                    if target.__contains__(options["label"]):
-                        target[options["label"]] += "\n" + str(
-                            get_attr_list_of_tags(current_page, options["name"], options["attr"], options["start"],
-                                                  options["end"]))
-                    else:
-                        target[options["label"]] = str(
-                            get_attr_list_of_tags(current_page, options["name"], options["attr"], options["start"],
-                                                  options["end"]))
-                elif options["get_what"] == "text":
-                    if target.__contains__(options["label"]):
-                        target[options["label"]] += "\n" + str(
-                            get_text_list_of_tags(current_page, options["name"], options["start"],
-                                                  options["end"]))
-                    else:
-                        target[options["label"]] = str(
-                            get_text_list_of_tags(current_page, options["name"], options["start"],
-                                                  options["end"]))
-            elif options["type"] == "class":
-                if options["get_what"] == "tag":
-                    if target.__contains__(options["label"]):
-                        target[options["label"]] += "\n" + str(
-                            current_page.find_all(options["name"])[options["start"]:options["end"]])
-                    else:
-                        target[options["label"]] = str(
-                            current_page.find_all(options["name"])[options["start"]:options["end"]])
-                elif options["get_what"] == "attr":
-                    if target.__contains__(options["label"]):
-                        target[options["label"]] += "\n" + str(
-                            get_attr_list_of_class(current_page, options["name"], options["attr"], options["start"],
-                                                   options["end"]))
-                    else:
-                        target[options["label"]] = str(
-                            get_attr_list_of_class(current_page, options["name"], options["attr"], options["start"],
-                                                   options["end"]))
-                elif options["get_what"] == "text":
-                    if target.__contains__(options["label"]):
-                        target[options["label"]] += "\n" + str(
-                            get_text_list_of_class(current_page, options["name"], options["start"],
-                                                   options["end"]))
-                    else:
-                        target[options["label"]] = str(
-                            get_text_list_of_class(current_page, options["name"], options["start"],
-                                                   options["end"]))
-            elif options["type"] == "selector":
-                if options["get_what"] == "tag":
-                    if target.__contains__(options["label"]):
-                        target[options["label"]] += "\n" + str(
-                            current_page.select(options["name"])[options["start"]:options["end"]])
-                    else:
-                        target[options["label"]] = str(
-                            current_page.select(options["name"])[options["start"]:options["end"]])
-                elif options["get_what"] == "attr":
-                    if target.__contains__(options["label"]):
-                        target[options["label"]] += "\n" + str(
-                            get_attr_list_of_selector(current_page, options["name"], options["attr"], options["start"],
-                                                      options["end"]))
-                    else:
-                        target[options["label"]] = str(
-                            get_attr_list_of_selector(current_page, options["name"], options["attr"], options["start"],
-                                                      options["end"]))
-                elif options["get_what"] == "text":
-                    if target.__contains__(options["label"]):
-                        target[options["label"]] += "\n" + str(get_text_list_of_selector(current_page, options["name"],
-                                                                                         options["start"],
-                                                                                         options["end"]))
-                    else:
-                        target[options["label"]] = str(get_text_list_of_selector(current_page, options["name"],
-                                                                                 options["start"],
-                                                                                 options["end"]))
+    target = scraper(current_page, options_list, target)
     # check if the next link exists
     if next_link_options["type"] == "tag":
         next_link_options["exists"] = is_tag_available(current_page, next_link_options["name"])
@@ -638,13 +491,15 @@ while scraping_type == 1:
     except ValueError:
         exit("INVALID OFFSET")
     next_link = get_full_url(url, next_link)
-    if next_link in old_links:
-        print("Done")
-        break
+    # if next_link in old_links:
+    #     print("Done")
+    #     break
     if next_link_options["exists"]:
-        response = requests.get(next_link, headers=user_agent)
+        # response = requests.get(next_link, headers=user_agent)
+        browser.get(url)
         old_links.append(next_link)
-        current_page = BeautifulSoup(response.content, 'lxml')
+        # current_page = BeautifulSoup(response.content, 'lxml')
+        current_page = BeautifulSoup(browser.page_source, 'lxml')
     print(next_link)
     count += 1
 for x in target.keys():
