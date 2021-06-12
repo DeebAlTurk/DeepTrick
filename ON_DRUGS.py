@@ -18,8 +18,8 @@ browser = webdriver.Firefox()
 target = {}
 demo: list = []
 options: list = [0, 1, 2, 3]
-demo.append(links[1])
-demo.append(links[2])
+demo.append(links[0])
+demo.append(links[3])
 
 for link in demo:
     browser.get(link[1])
@@ -45,8 +45,8 @@ for link in demo:
     options[1] = size
     options[2] = prise
     options[3] = img
+    target = scraper(soup, options, target)
+    convert_dict_to_json(target, name="JSONtest")
 
-target = scraper(soup, options, target)
 for i in target.keys():
     print(f"{i}=>{target[i]}")
-convert_dict_to_json(target)

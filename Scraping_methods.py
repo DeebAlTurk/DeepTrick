@@ -18,7 +18,7 @@ def convert_list_of_dicts_to_json(elms: list, indet: int = 4, name=""):
             json.dumps(elms, indent=indet)
 
 
-def convert_dict_to_json(elms: dict, indent: int = 4):
+def convert_dict_to_json(elms: dict, indent: int = 4, name=""):
     """
     this function convert the dictionary into a json file
     the name of the json file will be the current date and time
@@ -29,8 +29,13 @@ def convert_dict_to_json(elms: dict, indent: int = 4):
     try:
         for k in elms.keys():
             elms[k] = str(elms[k])
-        with open(f"{datetime.datetime.now().strftime('%Y-%m-%d %H-%M-%S')}.json", "w") as write_file:
-            json.dump(elms, write_file, indent=indent)
+        if name != "":
+            with open(f"{datetime.datetime.now().strftime('%Y-%m-%d %H-%M-%S')}.json", "w") as write_file:
+                json.dump(elms, write_file, indent=indent)
+        else:
+            with open(f"{name}.json", "w") as write_file:
+                json.dump(elms, write_file, indent=indent)
+
     except OSError:
         return False
     return True
