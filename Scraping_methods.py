@@ -29,7 +29,7 @@ def convert_dict_to_json(elms: dict, indent: int = 4, name=""):
     try:
         for k in elms.keys():
             elms[k] = str(elms[k])
-        if name != "":
+        if name == "":
             with open(f"{datetime.datetime.now().strftime('%Y-%m-%d %H-%M-%S')}.json", "w") as write_file:
                 json.dump(elms, write_file, indent=indent)
         else:

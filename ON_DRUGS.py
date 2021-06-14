@@ -1,5 +1,3 @@
-from time import sleep
-
 from selenium import webdriver
 
 from Scraping_methods import *
@@ -16,37 +14,57 @@ for big in giant.split("_DELMX_"):
 
 browser = webdriver.Firefox()
 target = {}
+done_targets = []
+redo_targets = []
 demo: list = []
 options: list = [0, 1, 2, 3]
-demo.append(links[0])
-demo.append(links[3])
-
-for link in demo:
+x = {}
+for link in links:
     browser.get(link[1])
-    sleep(10)
+    isDone = input("enter any key") or ""
     soup = BeautifulSoup(browser.page_source, "lxml")
-    desc = {'label': link[0] + " Desc", 'type': 'selector', 'name': '.css-12fzzt2', 'exists': True, 'isRange': 1,
+    desc = {'label': link[0] + " desc", 'type': 'selector', 'name': '.css-12fzzt2', 'exists': True, 'isRange': 1,
             'start': 0,
             'end': 0, 'get_what': 'text'}
     desc['end'] = len(soup.select(desc['name'])) + 1
-    img = {'label': link[0] + " imgs", 'type': 'selector', 'name': '.css-1bu2zfe', 'exists': True, 'isRange': 1,
+    img = {'label': link[0] + " img", 'type': 'selector', 'name': '.css-1bu2zfe', 'exists': True, 'isRange': 1,
            'start': 0,
            'end': 0, 'get_what': 'attr', 'attr': 'src'}
     img['end'] = len(soup.select(img['name'])) + 1
-    size = {'label': link[0] + " sizes", 'type': 'selector', 'name': '.css-4yob99', 'exists': True, 'isRange': 1,
+    size = {'label': link[0] + " size", 'type': 'selector', 'name': '.css-4yob99', 'exists': True, 'isRange': 1,
             'start': 0,
             'end': 0, 'get_what': 'text'}
     size['end'] = len(soup.select(size['name'])) + 1
-    prise = {'label': link[0] + " prises", 'type': 'selector', 'name': '.css-17fvam3', 'exists': True, 'isRange': 1,
+    price = {'label': link[0] + " price", 'type': 'selector', 'name': '.css-1m492cm', 'exists': True, 'isRange': 1,
              'start': 0,
              'end': 0, 'get_what': 'text'}
-    prise['end'] = len(soup.select(prise['name'])) + 1
+    price['end'] = len(soup.select(price['name'])) + 1
     options[0] = desc
     options[1] = size
-    options[2] = prise
+    options[2] = price
     options[3] = img
     target = scraper(soup, options, target)
-    convert_dict_to_json(target, name="JSONtest")
+    print(f"desc: {len(soup.select(desc['name'])) }")
+    print(f"size: {len(soup.select(size['name'])) }")
+    print(f"price: {len(soup.select(price['name']))}")
+    print(f"img: {len(soup.select(img['name']))}")
+    target[link[0] + " price"] = str(target[link[0] + " price"])
+    print(target[link[0] + " price"])
+    p = ""
+    for z in str(target[link[0] + " price"]).split(','):
+        if len(z.split('AED')) > 2:
+            z = z.split('AED')[1] + " AED"
+            print(z)
+        if p == "":
+            p += z
+        else:
+            p += ", " + z
+    target[link[0] + " price"] = p
+    convert_dict_to_json(target, name="output")
+    x.clear()
+    isDone = input() or ""
+    if isDone != "":
+        redo_targets.append(link)
 
-for i in target.keys():
-    print(f"{i}=>{target[i]}")
+for i in redo_targets:
+    print(i)
