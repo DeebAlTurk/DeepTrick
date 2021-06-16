@@ -3,6 +3,8 @@
 <ul>
   <li>Beautiful Soup</li>
   <li>lxml</li>
+  <li>firefox</li>
+  <li>gecko</li>
 </ul>
 <h1>How to install</h1>
  <ul>
