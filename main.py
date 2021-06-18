@@ -1,7 +1,5 @@
 from time import sleep
 
-from selenium import webdriver
-
 from Scraping_methods import *
 from Validtors.url_methods import *
 
@@ -10,16 +8,16 @@ if not check_url_exists(url):
     print("Invalid URL")
     exit("Exiting Deep Trick")
 
-browser = webdriver.Firefox()
-browser.get(url)
-browser.execute_script("window.scrollTo(0,document.body.scrollHeight)")
+# browser = webdriver.Firefox()
+# browser.get(url)
+# browser.execute_script("window.scrollTo(0,document.body.scrollHeight)")
 sleep(10)
 # the user agent to mimic access websites that doesnt allow the default user agent of the BS
 user_agent = {'User-agent': 'Mozilla/5.0'}
 # the response of the get request the was sent
-# response = requests.get(url, headers=user_agent)
+response = requests.get(url, headers=user_agent)
 # the BS object that contain the HTML of the page
-current_page = BeautifulSoup(browser.page_source, 'lxml')
+current_page = BeautifulSoup(response.content, 'lxml')
 # print the page because some websites like Zomato changes the CSS classes with each request
 # the prettify method to make the html for readable
 print(current_page.prettify())
@@ -495,11 +493,9 @@ while scraping_type == 1:
     #     print("Done")
     #     break
     if next_link_options["exists"]:
-        # response = requests.get(next_link, headers=user_agent)
-        browser.get(url)
+        response = requests.get(next_link, headers=user_agent)
         old_links.append(next_link)
-        # current_page = BeautifulSoup(response.content, 'lxml')
-        current_page = BeautifulSoup(browser.page_source, 'lxml')
+        current_page = BeautifulSoup(response.content, 'lxml')
     print(next_link)
     count += 1
 for x in target.keys():

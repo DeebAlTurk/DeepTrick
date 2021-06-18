@@ -18,10 +18,8 @@ for big in giant.split("_DELMX_"):
 
 browser = webdriver.Firefox()
 target = {}
-done_targets = []
 redo_targets = []
 options: list = [0, 1, 2, 3]
-x = {}
 for link in links:
     browser.get(link[1])
     isDone = input("enter any key") or ""
@@ -60,13 +58,15 @@ for link in links:
     for z in str(target[link[0] + " price"]).split(','):
         if len(z.split('AED')) > 2:
             z = z.split('AED')[1] + " AED"
+            z = f"'{z}'"
         if p == "":
             p += z
         else:
             p += ", " + z
+    if not p.endswith(']'):
+        p += ']'
     target[link[0] + " price"] = p
     convert_dict_to_json(target, name="redo")
-    x.clear()
     if not (ds == ss == ps == isize):
         redo_targets.append(link)
 
