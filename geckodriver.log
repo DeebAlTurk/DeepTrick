@@ -3346,3 +3346,350 @@ JavaScript error: , line 0: uncaught exception: undefined
 [Parent 11146, Gecko_IOThread] WARNING: pipe error (136): Connection reset by peer: file /home/abuild/rpmbuild/BUILD/firefox-68.9.0/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
 [Parent 11146, Gecko_IOThread] WARNING: pipe error (82): Connection reset by peer: file /home/abuild/rpmbuild/BUILD/firefox-68.9.0/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
 1624446549419	Marionette	INFO	Stopped listening on port 38921
+1624448770880	geckodriver	INFO	Listening on 127.0.0.1:39981
+1624448771881	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileFvFiTb"
+1624448772523	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1624448772523	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1624448772523	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1624448772523	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: undefined, line 14: Error: An unexpected error occurred
+JavaScript error: moz-extension://b48ca4c9-d55b-4171-890d-0e6e63c9062f/lib/picture_in_picture_overrides.js, line 15: Error: Incorrect argument types for pictureInPictureParent.setOverrides.
+JavaScript error: resource:///modules/sessionstore/SessionStore.jsm, line 1325: uncaught exception: 2147746065
+1624448774715	Marionette	INFO	Listening on port 39877
+1624448774806	Marionette	WARN	TLS certificate errors will be ignored for this session
+1624448791854	geckodriver	INFO	Listening on 127.0.0.1:49255
+1624448791859	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilexjZnA6"
+1624448792510	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1624448792510	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1624448792511	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1624448792511	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: undefined, line 14: Error: An unexpected error occurred
+JavaScript error: moz-extension://b0ae27e7-b54c-4796-ad82-cf8b0ad64518/lib/picture_in_picture_overrides.js, line 15: Error: Incorrect argument types for pictureInPictureParent.setOverrides.
+JavaScript error: resource:///modules/sessionstore/SessionStore.jsm, line 1325: uncaught exception: 2147746065
+1624448794641	Marionette	INFO	Listening on port 44219
+1624448794747	Marionette	WARN	TLS certificate errors will be ignored for this session
+1624448800134	Marionette	INFO	Stopped listening on port 39877
+[Parent 4258, Gecko_IOThread] WARNING: pipe error (82): Connection reset by peer: file /home/abuild/rpmbuild/BUILD/firefox-68.9.0/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+[Parent 4258, Gecko_IOThread] WARNING: pipe error (80): Connection reset by peer: file /home/abuild/rpmbuild/BUILD/firefox-68.9.0/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+1624448887352	Marionette	INFO	Stopped listening on port 44219
+1624448895453	geckodriver	INFO	Listening on 127.0.0.1:44933
+1624448895456	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileNNEKK2"
+1624448896098	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1624448896098	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1624448896098	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1624448896098	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: undefined, line 14: Error: An unexpected error occurred
+JavaScript error: moz-extension://1f1b21a2-2c5e-4099-9de3-9ed682c9b8b1/lib/picture_in_picture_overrides.js, line 15: Error: Incorrect argument types for pictureInPictureParent.setOverrides.
+JavaScript error: resource:///modules/sessionstore/SessionStore.jsm, line 1325: uncaught exception: 2147746065
+1624448898223	Marionette	INFO	Listening on port 34043
+1624448898330	Marionette	WARN	TLS certificate errors will be ignored for this session
+1624448941671	Marionette	INFO	Stopped listening on port 34043
+1624448942177	geckodriver	INFO	Listening on 127.0.0.1:53423
+1624448942182	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile7z8qjH"
+1624448942802	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1624448942802	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1624448942803	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1624448942803	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: undefined, line 14: Error: An unexpected error occurred
+JavaScript error: moz-extension://198f3dec-27e7-4cd2-a18c-95383c947f60/lib/picture_in_picture_overrides.js, line 15: Error: Incorrect argument types for pictureInPictureParent.setOverrides.
+JavaScript error: resource:///modules/sessionstore/SessionStore.jsm, line 1325: uncaught exception: 2147746065
+1624448944966	Marionette	INFO	Listening on port 37643
+1624448945076	Marionette	WARN	TLS certificate errors will be ignored for this session
+1624449049315	geckodriver	INFO	Listening on 127.0.0.1:55541
+1624449049321	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileYK4dxK"
+1624449049958	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1624449049958	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1624449049959	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1624449049959	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+console.warn: "Error while detaching the thread front: 'detach' request packet to 'server1.conn0.child1/context18' can't be sent as the connection is closed."
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+[Parent 4825, Gecko_IOThread] WARNING: pipe error (79): Connection reset by peer: file /home/abuild/rpmbuild/BUILD/firefox-68.9.0/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+1624449051318	Marionette	INFO	Stopped listening on port 37643
+JavaScript error: undefined, line 14: Error: An unexpected error occurred
+JavaScript error: moz-extension://b58058cd-97a2-4ea4-beef-1915d0e18431/lib/picture_in_picture_overrides.js, line 15: Error: Incorrect argument types for pictureInPictureParent.setOverrides.
+JavaScript error: resource:///modules/sessionstore/SessionStore.jsm, line 1325: uncaught exception: 2147746065
+1624449052473	Marionette	INFO	Listening on port 42019
+1624449052532	Marionette	WARN	TLS certificate errors will be ignored for this session
+1624449192788	geckodriver	INFO	Listening on 127.0.0.1:41691
+1624449192792	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileckZw1Y"
+1624449193427	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1624449193428	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1624449193428	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1624449193428	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: undefined, line 14: Error: An unexpected error occurred
+JavaScript error: moz-extension://c64c713e-a6a3-4903-9a73-36d44a124cfb/lib/picture_in_picture_overrides.js, line 15: Error: Incorrect argument types for pictureInPictureParent.setOverrides.
+JavaScript error: resource:///modules/sessionstore/SessionStore.jsm, line 1325: uncaught exception: 2147746065
+1624449195552	Marionette	INFO	Listening on port 40793
+1624449195661	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.warn: "Error while detaching the thread front: 'detach' request packet to 'server1.conn0.child1/context18' can't be sent as the connection is closed."
+[Parent 5106, Gecko_IOThread] WARNING: pipe error (79): Connection reset by peer: file /home/abuild/rpmbuild/BUILD/firefox-68.9.0/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+[Parent 5106, Gecko_IOThread] WARNING: pipe error (60): Connection reset by peer: file /home/abuild/rpmbuild/BUILD/firefox-68.9.0/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+1624449196335	Marionette	INFO	Stopped listening on port 42019
+1624449225905	Marionette	INFO	Stopped listening on port 40793
+1624449230622	geckodriver	INFO	Listening on 127.0.0.1:43837
+1624449230627	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileURiDny"
+1624449231281	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1624449231282	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1624449231282	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1624449231282	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: undefined, line 14: Error: An unexpected error occurred
+JavaScript error: moz-extension://e0ad9067-29a6-433e-95d6-fa05b1a8570f/lib/picture_in_picture_overrides.js, line 15: Error: Incorrect argument types for pictureInPictureParent.setOverrides.
+JavaScript error: resource:///modules/sessionstore/SessionStore.jsm, line 1325: uncaught exception: 2147746065
+1624449233607	Marionette	INFO	Listening on port 39953
+1624449233640	Marionette	WARN	TLS certificate errors will be ignored for this session
+1624449263665	Marionette	INFO	Stopped listening on port 39953
+1624449286235	geckodriver	INFO	Listening on 127.0.0.1:43315
+1624449286239	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileVURLn8"
+1624449286975	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1624449286975	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1624449286978	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1624449286978	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: undefined, line 14: Error: An unexpected error occurred
+JavaScript error: moz-extension://b5a76fb0-2a68-4ddb-8c43-fb4e4e0da064/lib/picture_in_picture_overrides.js, line 15: Error: Incorrect argument types for pictureInPictureParent.setOverrides.
+JavaScript error: resource:///modules/sessionstore/SessionStore.jsm, line 1325: uncaught exception: 2147746065
+1624449289254	Marionette	INFO	Listening on port 39437
+1624449289350	Marionette	WARN	TLS certificate errors will be ignored for this session
+1624449348521	geckodriver	INFO	Listening on 127.0.0.1:52255
+1624449348526	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileWoQLfZ"
+1624449349157	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1624449349158	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1624449349158	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1624449349158	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+Marionette threw an error: TypeError: this.curBrowser.contentBrowser is null
+GeckoDriver.prototype.get@chrome://marionette/content/driver.js:1134:3
+
+1624449350005	Marionette	ERROR	[6442450945] No reply from Marionette:Register
+JavaScript error: undefined, line 14: Error: An unexpected error occurred
+JavaScript error: moz-extension://f6176a6a-2a40-41c2-9d0e-3374de0e5f3a/lib/picture_in_picture_overrides.js, line 15: Error: Incorrect argument types for pictureInPictureParent.setOverrides.
+JavaScript error: resource:///modules/sessionstore/SessionStore.jsm, line 1325: uncaught exception: 2147746065
+1624449351867	Marionette	INFO	Listening on port 37441
+1624449351963	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Parent 6253, Gecko_IOThread] WARNING: pipe error (82): Connection reset by peer: file /home/abuild/rpmbuild/BUILD/firefox-68.9.0/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+[Parent 6253, Gecko_IOThread] WARNING: pipe error (122): Connection reset by peer: file /home/abuild/rpmbuild/BUILD/firefox-68.9.0/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+1624449352000	Marionette	INFO	Stopped listening on port 39437
+console.error: "Error while calling actor 'pagestyle's method 'getLayout'" "can't access dead object"
+console.error: "getLayout@resource://devtools/server/actors/styles.js:921:24\nhandler@resource://devtools/shared/protocol.js:1221:37\nonPacket@resource://devtools/server/main.js:1395:58\nreceiveMessage@resource://devtools/shared/transport/child-transport.js:66:16\n"
+console.error: "Protocol error (unknownError): can't access dead object"
+Handler function threw an exception: [Exception... "Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICacheInfoChannel.isRacing]"  nsresult: "0x80040111 (NS_ERROR_NOT_AVAILABLE)"  location: "JS frame :: resource://devtools/server/actors/network-monitor/network-response-listener.js :: NetworkResponseListener.prototype._getSecurityInfo< :: line 334"  data: no]
+Stack: NetworkResponseListener.prototype._getSecurityInfo<@resource://devtools/server/actors/network-monitor/network-response-listener.js:334:26
+exports.makeInfallible/<@resource://devtools/shared/ThreadSafeDevToolsUtils.js:111:22
+onStartRequest@resource://devtools/server/actors/network-monitor/network-response-listener.js:226:10
+Line: 334, column: 0
+console.error: "Handler function threw an exception: [Exception... \"Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICacheInfoChannel.isRacing]\"  nsresult: \"0x80040111 (NS_ERROR_NOT_AVAILABLE)\"  location: \"JS frame :: resource://devtools/server/actors/network-monitor/network-response-listener.js :: NetworkResponseListener.prototype._getSecurityInfo< :: line 334\"  data: no]\nStack: NetworkResponseListener.prototype._getSecurityInfo<@resource://devtools/server/actors/network-monitor/network-response-listener.js:334:26\nexports.makeInfallible/<@resource://devtools/shared/ThreadSafeDevToolsUtils.js:111:22\nonStartRequest@resource://devtools/server/actors/network-monitor/network-response-listener.js:226:10\nLine: 334, column: 0"
+console.error: "Task cancelled"
+Exiting due to channel error.
+[Child 6672, Chrome_ChildThread] WARNING: pipe error (37): Connection reset by peer: file /home/abuild/rpmbuild/BUILD/firefox-68.9.0/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+[Child 6672, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /home/abuild/rpmbuild/BUILD/firefox-68.9.0/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+1624449577464	geckodriver	INFO	Listening on 127.0.0.1:53533
+1624449577470	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileZ3wrMb"
+1624449578115	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1624449578116	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1624449578116	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1624449578116	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: undefined, line 14: Error: An unexpected error occurred
+JavaScript error: moz-extension://14317d5d-2818-4a11-91a2-a0f6674938fe/lib/picture_in_picture_overrides.js, line 15: Error: Incorrect argument types for pictureInPictureParent.setOverrides.
+JavaScript error: resource:///modules/sessionstore/SessionStore.jsm, line 1325: uncaught exception: 2147746065
+1624449580288	Marionette	INFO	Listening on port 35053
+1624449580382	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.carrefouruae.com/pdpFrontend/_next/static/chunks/f770f35d773637861c752229c1f8cc96c243f799.a8ce4d36e18c87ef0f3d.js, line 1: Error: Request aborted
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PLayerTransaction::Msg_ReleaseLayer Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+1624449615516	Marionette	INFO	Stopped listening on port 35053
+1624449658977	geckodriver	INFO	Listening on 127.0.0.1:53913
+1624449658983	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileeRIGv3"
+1624449659634	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1624449659634	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1624449659635	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1624449659635	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: undefined, line 14: Error: An unexpected error occurred
+JavaScript error: moz-extension://f78b390a-3d7b-49b3-a990-53db114783e3/lib/picture_in_picture_overrides.js, line 15: Error: Incorrect argument types for pictureInPictureParent.setOverrides.
+JavaScript error: resource:///modules/sessionstore/SessionStore.jsm, line 1325: uncaught exception: 2147746065
+1624449661803	Marionette	INFO	Listening on port 40071
+1624449661920	Marionette	WARN	TLS certificate errors will be ignored for this session
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1624449748388	geckodriver	INFO	Listening on 127.0.0.1:56555
+1624449748393	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilesnYwhe"
+1624449749056	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1624449749056	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1624449749056	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1624449749057	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: undefined, line 14: Error: An unexpected error occurred
+JavaScript error: moz-extension://3c2e6d34-b51a-454b-be43-b1cc9fcfd005/lib/picture_in_picture_overrides.js, line 15: Error: Incorrect argument types for pictureInPictureParent.setOverrides.
+JavaScript error: resource:///modules/sessionstore/SessionStore.jsm, line 1325: uncaught exception: 2147746065
+1624449751284	Marionette	INFO	Listening on port 33841
+1624449751314	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.googletagmanager.com/gtm.js?id=GTM-WFM7596&gtm_auth=&gtm_preview=&gtm_cookies_win=x, line 1564: NS_ERROR_NOT_INITIALIZED: 
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1624449767452	Marionette	INFO	Stopped listening on port 33841
+1624449848002	geckodriver	INFO	Listening on 127.0.0.1:35301
+1624449848007	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileDpf4ws"
+1624449848645	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1624449848645	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1624449848645	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1624449848645	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: undefined, line 14: Error: An unexpected error occurred
+JavaScript error: moz-extension://094291bb-1509-4e71-b702-058a9767882b/lib/picture_in_picture_overrides.js, line 15: Error: Incorrect argument types for pictureInPictureParent.setOverrides.
+JavaScript error: resource:///modules/sessionstore/SessionStore.jsm, line 1325: uncaught exception: 2147746065
+1624449850790	Marionette	INFO	Listening on port 41867
+1624449850892	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.carrefouruae.com/pdpFrontend/_next/static/chunks/f770f35d773637861c752229c1f8cc96c243f799.a8ce4d36e18c87ef0f3d.js, line 1: Error: Request aborted
+JavaScript error: https://www.carrefouruae.com/pdpFrontend/_next/static/chunks/f770f35d773637861c752229c1f8cc96c243f799.a8ce4d36e18c87ef0f3d.js, line 1: Error: Request aborted
+JavaScript error: https://www.carrefouruae.com/pdpFrontend/_next/static/chunks/f770f35d773637861c752229c1f8cc96c243f799.a8ce4d36e18c87ef0f3d.js, line 1: Error: Request aborted
+JavaScript error: https://www.carrefouruae.com/pdpFrontend/_next/static/chunks/f770f35d773637861c752229c1f8cc96c243f799.a8ce4d36e18c87ef0f3d.js, line 1: Error: Request aborted
+JavaScript error: https://www.carrefouruae.com/pdpFrontend/_next/static/chunks/f770f35d773637861c752229c1f8cc96c243f799.a8ce4d36e18c87ef0f3d.js, line 1: Error: Request aborted
+JavaScript error: https://www.carrefouruae.com/pdpFrontend/_next/static/chunks/f770f35d773637861c752229c1f8cc96c243f799.a8ce4d36e18c87ef0f3d.js, line 1: Error: Request aborted
+JavaScript error: https://www.carrefouruae.com/pdpFrontend/_next/static/chunks/f106ba2b.b8c67302bb3e4a67b1c1.js, line 7: TypeError: r[0] is undefined
+JavaScript error: https://www.carrefouruae.com/pdpFrontend/_next/static/chunks/f106ba2b.b8c67302bb3e4a67b1c1.js, line 7: TypeError: r[0] is undefined
+JavaScript error: https://www.carrefouruae.com/pdpFrontend/_next/static/chunks/f106ba2b.b8c67302bb3e4a67b1c1.js, line 7: TypeError: r[0] is undefined
+JavaScript error: https://www.carrefouruae.com/pdpFrontend/_next/static/chunks/f770f35d773637861c752229c1f8cc96c243f799.a8ce4d36e18c87ef0f3d.js, line 1: Error: Request aborted
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1624450791471	geckodriver	INFO	Listening on 127.0.0.1:58615
+1624450791478	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilewb6hPc"
+1624450792107	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1624450792108	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1624450792108	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1624450792108	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: undefined, line 14: Error: An unexpected error occurred
+JavaScript error: moz-extension://fdecb619-fa06-4115-b97d-cb92b88beb24/lib/picture_in_picture_overrides.js, line 15: Error: Incorrect argument types for pictureInPictureParent.setOverrides.
+JavaScript error: resource:///modules/sessionstore/SessionStore.jsm, line 1325: uncaught exception: 2147746065
+1624450794243	Marionette	INFO	Listening on port 41383
+1624450794369	Marionette	WARN	TLS certificate errors will be ignored for this session
+1624450798354	Marionette	INFO	Stopped listening on port 41383
+1624450853940	geckodriver	INFO	Listening on 127.0.0.1:58403
+1624450853946	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilemHnLo6"
+1624450854624	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1624450854624	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1624450854624	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1624450854625	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: undefined, line 14: Error: An unexpected error occurred
+JavaScript error: moz-extension://ac3ed773-2b47-4480-a90c-9672a41e0c56/lib/picture_in_picture_overrides.js, line 15: Error: Incorrect argument types for pictureInPictureParent.setOverrides.
+JavaScript error: resource:///modules/sessionstore/SessionStore.jsm, line 1325: uncaught exception: 2147746065
+1624450857052	Marionette	INFO	Listening on port 44501
+1624450857146	Marionette	WARN	TLS certificate errors will be ignored for this session
+1624450980045	geckodriver	INFO	Listening on 127.0.0.1:41503
+1624450980049	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile7fpJAs"
+1624450980708	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: mozillaAddons
+1624450980708	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: telemetry
+1624450980708	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: resource://pdf.js/
+1624450980708	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid extension permission: about:reader*
+JavaScript error: resource:///modules/sessionstore/SessionStore.jsm, line 1325: uncaught exception: 2147746065
+JavaScript error: undefined, line 14: Error: An unexpected error occurred
+JavaScript error: moz-extension://33f13bbf-56d5-45d7-9802-70b4e9c787cf/lib/picture_in_picture_overrides.js, line 15: Error: Incorrect argument types for pictureInPictureParent.setOverrides.
+1624450983209	Marionette	INFO	Listening on port 36557
+1624450983262	Marionette	WARN	TLS certificate errors will be ignored for this session
+[Parent 9176, Gecko_IOThread] WARNING: pipe error (82): Connection reset by peer: file /home/abuild/rpmbuild/BUILD/firefox-68.9.0/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+[Parent 9176, Gecko_IOThread] WARNING: pipe error (71): Connection reset by peer: file /home/abuild/rpmbuild/BUILD/firefox-68.9.0/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+1624450983627	Marionette	INFO	Stopped listening on port 44501
+JavaScript error: https://www.carrefouruae.com/pdpFrontend/_next/static/chunks/f770f35d773637861c752229c1f8cc96c243f799.a8ce4d36e18c87ef0f3d.js, line 1: Error: Request aborted
+JavaScript error: https://www.carrefouruae.com/pdpFrontend/_next/static/chunks/f770f35d773637861c752229c1f8cc96c243f799.a8ce4d36e18c87ef0f3d.js, line 1: Error: Request aborted
+JavaScript error: https://www.carrefouruae.com/pdpFrontend/_next/static/chunks/f770f35d773637861c752229c1f8cc96c243f799.a8ce4d36e18c87ef0f3d.js, line 1: Error: Request aborted
+JavaScript error: https://www.carrefouruae.com/pdpFrontend/_next/static/chunks/f770f35d773637861c752229c1f8cc96c243f799.a8ce4d36e18c87ef0f3d.js, line 1: Error: Request aborted
+JavaScript error: https://www.carrefouruae.com/pdpFrontend/_next/static/chunks/f770f35d773637861c752229c1f8cc96c243f799.a8ce4d36e18c87ef0f3d.js, line 1: Error: Request aborted
+JavaScript error: https://www.carrefouruae.com/pdpFrontend/_next/static/chunks/f770f35d773637861c752229c1f8cc96c243f799.a8ce4d36e18c87ef0f3d.js, line 1: Error: Request aborted
+[Parent 9452, Gecko_IOThread] WARNING: pipe error (162): Connection reset by peer: file /home/abuild/rpmbuild/BUILD/firefox-68.9.0/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+[Parent 9452, Gecko_IOThread] WARNING: pipe error (72): Connection reset by peer: file /home/abuild/rpmbuild/BUILD/firefox-68.9.0/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 358
+1624451325817	Marionette	INFO	Stopped listening on port 36557
