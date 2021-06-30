@@ -13,7 +13,7 @@ if not check_url_exists(url):
 browser = webdriver.Firefox()
 browser.get(url)
 browser.execute_script("window.scrollTo(0,document.body.scrollHeight)")
-sleep(10)
+sleep(5)
 # the user agent to mimic access websites that doesnt allow the default user agent of the BS
 user_agent = {'User-agent': 'Mozilla/5.0'}
 # the response of the get request the was sent
