@@ -17,36 +17,31 @@ for big in giant.split("_DELMX_"):
 browser = webdriver.Firefox()
 target = {}
 demo: list = []
-options: list = [0, 1, 2, 3]
-demo.append(links[0])
-demo.append(links[3])
+options: list = []
+demo.append(links[1])
+demo.append(links[2])
+link = links[0]
+browser.get(
+    "file:///home/deeb/Downloads/Korean%20Online%20Shopping%20-%20Buy%20Food%20Cupboard%20on%20Carrefour%20UAE.html")
+sleep(10)
+soup = BeautifulSoup(browser.page_source, "lxml")
+desc = {'label': link[0], 'type': 'selector', 'name': '.css-12fzzt2', 'exists': True, 'isRange': 1, 'start': 0,
+        'end': 0, 'get_what': 'text'}
+desc['end'] = len(soup.select(desc['name'])) + 1
+img = {'label': link[0], 'type': 'selector', 'name': '.css-1bu2zfe', 'exists': True, 'isRange': 1, 'start': 0,
+       'end': 0, 'get_what': 'attr', 'attr': 'src'}
+img['end'] = len(soup.select(img['name'])) + 1
+size = {'label': link[0], 'type': 'selector', 'name': '.css-4yob99', 'exists': True, 'isRange': 1, 'start': 0,
+        'end': 0, 'get_what': 'text'}
+size['end'] = len(soup.select(size['name'])) + 1
+prise = {'label': link[0], 'type': 'selector', 'name': '.css-17fvam3', 'exists': True, 'isRange': 1, 'start': 0,
+         'end': 0, 'get_what': 'text'}
+prise['end'] = len(soup.select(prise['name'])) + 1
+options.append(desc)
+options.append(size)
+options.append(prise)
+options.append(img)
 
-for link in demo:
-    browser.get(link[1])
-    sleep(10)
-    soup = BeautifulSoup(browser.page_source, "lxml")
-    desc = {'label': link[0] + " Desc", 'type': 'selector', 'name': '.css-12fzzt2', 'exists': True, 'isRange': 1,
-            'start': 0,
-            'end': 0, 'get_what': 'text'}
-    desc['end'] = len(soup.select(desc['name'])) + 1
-    img = {'label': link[0] + " imgs", 'type': 'selector', 'name': '.css-1bu2zfe', 'exists': True, 'isRange': 1,
-           'start': 0,
-           'end': 0, 'get_what': 'attr', 'attr': 'src'}
-    img['end'] = len(soup.select(img['name'])) + 1
-    size = {'label': link[0] + " sizes", 'type': 'selector', 'name': '.css-4yob99', 'exists': True, 'isRange': 1,
-            'start': 0,
-            'end': 0, 'get_what': 'text'}
-    size['end'] = len(soup.select(size['name'])) + 1
-    prise = {'label': link[0] + " prises", 'type': 'selector', 'name': '.css-17fvam3', 'exists': True, 'isRange': 1,
-             'start': 0,
-             'end': 0, 'get_what': 'text'}
-    prise['end'] = len(soup.select(prise['name'])) + 1
-    options[0] = desc
-    options[1] = size
-    options[2] = prise
-    options[3] = img
-    target = scraper(soup, options, target)
-    convert_dict_to_json(target, name="JSONtest")
-
+target = scraper(soup, options, target)
 for i in target.keys():
     print(f"{i}=>{target[i]}")

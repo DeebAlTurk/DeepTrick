@@ -5,17 +5,13 @@ import json
 from bs4 import BeautifulSoup
 
 
-def convert_list_of_dicts_to_json(elms: list, indet: int = 4, name=""):
+def convert_list_of_dicts_to_json(elms: list, indet: int = 4):
     for item in list:
         for keys in dict(item).keys():
             item[keys] = str(item[keys])
-    if name == "":
-        filename: str = datetime.datetime.now().strftime('%Y-%m-%d %H-%M-%S')
-        with open(f"{filename}.json", 'a') as write_file:
-            json.dumps(elms, indent=indet)
-    else:
-        with open(f"{name}.json", 'a') as write_file:
-            json.dumps(elms, indent=indet)
+    filename: str = datetime.datetime.now().strftime('%Y-%m-%d %H-%M-%S')
+    with open(f"{filename}.json", 'a') as write_file:
+        json.dumps(elms, indent=indet)
 
 
 def convert_dict_to_json(elms: dict, indent: int = 4, name=""):
@@ -56,8 +52,17 @@ def is_css_selector_available(soup: BeautifulSoup, selector: str):
 def indexer(elms: list, negative: bool = False):
     # this function takes a list and print the index of each item in that list
     # you can also print the negative index of the list
-    for i in range(len(elms)):
-        print(f'[{i}] {elms[i]}')
+    if negative:
+        x: dict = {}
+        for i in range(-1, len(elms) * -1, -1):
+            # print(f"[{i}] {elms[i]}")
+            x[i] = elms[i]
+        for k in reversed(x.keys()):
+            print(f"[{k}] {x[k]}")
+        return
+    else:
+        for i in range(len(elms)):
+            print(f'[{i}] {elms[i]}')
 
 
 def is_range_correct(elms: list, start: int, end: int):
