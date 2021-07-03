@@ -10,7 +10,7 @@ if not check_url_exists(url):
     print("Invalid URL")
     exit("Exiting Deep Trick")
 
-browser = webdriver.Firefox()
+browser = webdriver.Chrome("chromedriver.exe")
 browser.get(url)
 browser.execute_script("window.scrollTo(0,document.body.scrollHeight)")
 sleep(5)
